@@ -1,22 +1,17 @@
-Created new Wasp app in ./khujta_opss directory!
+# Run the development database (and leave it running):
+wasp db start
 
-To run your new app, follow the instructions below:
+# Open new terminal window (or tab) in that same dir and continue in it.
+wasp db migrate-dev
 
-  1. Position into app's root directory:
-    cd khujta_opss/app
+# Create initial dot env file from the template:
+cp .env.server.example .env.server
 
-  2. Run the development database (and leave it running):
-    wasp db start
+# Last step: run the app!
+wasp start
 
-  3. Open new terminal window (or tab) in that same dir and continue in it.
+# start ngrok for payment test
+ngrok http 3001
 
-  4. Apply initial database migrations:
-    wasp db migrate-dev
-
-  5. Create initial dot env file from the template:
-    cp .env.server.example .env.server
-
-  6. Last step: run the app!
-    wasp start
-
-Check the README for additional guidance and the link to docs!
+# db studio
+wasp db studio
