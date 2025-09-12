@@ -2,7 +2,7 @@ import type { PaymentPlan } from './plans';
 import type { PaymentsWebhook } from 'wasp/server/api';
 import type { MiddlewareConfigFn } from 'wasp/server';
 import { PrismaClient } from '@prisma/client';
-import { stripePaymentProcessor } from './stripe/paymentProcessor';
+// import { stripePaymentProcessor } from './stripe/paymentProcessor';
 import { lemonSqueezyPaymentProcessor } from './lemonSqueezy/paymentProcessor';
 
 export interface CreateCheckoutSessionArgs {
@@ -28,5 +28,5 @@ export interface PaymentProcessor {
  * Choose which payment processor you'd like to use, then delete the 
  * other payment processor code that you're not using  from `/src/payment`
  */
-// export const paymentProcessor: PaymentProcessor = lemonSqueezyPaymentProcessor;
-export const paymentProcessor: PaymentProcessor = stripePaymentProcessor;
+export const paymentProcessor: PaymentProcessor = lemonSqueezyPaymentProcessor;
+// export const paymentProcessor: PaymentProcessor = stripePaymentProcessor;
